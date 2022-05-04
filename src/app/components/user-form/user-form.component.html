@@ -1,0 +1,41 @@
+<form (ngSubmit)="saveUser()">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title *ngIf="!update">Crear Usuario</mat-card-title>
+      <mat-card-title *ngIf="update">Actualizar Usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <input placeholder="Id" matInput type="text" [(ngModel)]="user.id" name="id" [disabled]="update">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input placeholder="Username" matInput type="text" [(ngModel)]="user.username" name="username">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input placeholder="Name" matInput type="text" [(ngModel)]="user.name" name="name">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input placeholder="Last Name" matInput type="text" [(ngModel)]="user.last_name" name="last_name">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-select [(ngModel)]="user.id_type" name="id_type">
+          <mat-option value="CC">CC</mat-option>
+          <mat-option value="TI">TI</mat-option>
+          <mat-option value="PA">PA</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input placeholder="Birthdate" matInput type="date" [(ngModel)]="user.birthdate" name="birthdate">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input placeholder="Email" matInput type="text" [(ngModel)]="user.email" name="email">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input placeholder="Password" matInput type="password" [(ngModel)]="user.password" name="password">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button type="submit">Guardar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
