@@ -23,6 +23,11 @@ const routes: Routes = [{
   component: UserDetailComponent,
   pathMatch: 'full'
 },
+{
+  path: '',
+  redirectTo: '/users',
+  pathMatch: 'full'
+},
 ];
 
 @NgModule({
